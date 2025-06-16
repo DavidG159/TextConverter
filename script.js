@@ -9,19 +9,27 @@ let textResult = document.querySelector('.textresult');
 function convertText(text) {
 
     let newtxt;
-    const specialCharchecker = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(text);
-    const checkspace = /\s/.test(text);
+    let newt;
+    const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g; // specialchar
+    const specialCharchecker = specialChars.test(text);  // checking if it has specialchars - returns true or false
+    const checkspace = /\s/.test(text);                 // checking if it has space - returns true or false
+
 
 
     if (checkspace) {
-        newtxt = text.trim();
-        specialCharchecker ? console.log('specialcharyes') : console.log('specialcharno');
-        console.log(newtxt);
+
+        newtxt = text.trim();// 
+        specialCharchecker ? newt = text.split(specialChars) : console.log('specialcharno');
+        console.log(newt);
 
         // let test = newtxt = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/ ? console.log('real') : console.log('nope2');
 
-    } else {
-        console.log('nope');
+    } else if (specialCharchecker) {
+        newt = text.split(specialChars);
+        console.log(newt);
+        const [x, y] = newt;
+
+        console.log(`${x}${y}`);
     }
 
 
