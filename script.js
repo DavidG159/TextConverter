@@ -23,11 +23,10 @@ function convertText(text) {
     if (checkspace) {
 
         newtxt = text.trim();// removes space on the start and at the end of the string 
-        specialCharchecker ? newt = newtxt.split(specialChars) : console.log('specialcharno');
+        specialCharchecker ? newt = newtxt.split(specialChars).join('') : console.log('specialcharno');
         makeArray = new Array(newt.length);
-
-        console.log(newtxt, "This is newtxt");
         console.log(newt, "This is newt");
+
         checkSpaceMiddle(newt);
 
         //checkSpaceMiddle(newt);
@@ -47,10 +46,10 @@ function convertText(text) {
     function checkSpaceMiddle(word) {
         let result;
         //return console.log(word.includes('') || word.includes(' '));
-
+        //checks if the array has a '' or ' '
         if (word.includes('') || word.includes(' ')) {
-            console.log(word);
-            result = word.filter(c => c !== '' || c !== ' ').join('');
+            console.log(word.trim().split(''));
+            result = word.trim().split('').filter(c => c !== '' && c !== ' ').join('');
 
         }
 
