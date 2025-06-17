@@ -29,6 +29,7 @@ function convertText(text) {
         console.log(newtxt, "This is newtxt");
         console.log(newt, "This is newt");
         checkSpaceMiddle(newt);
+
         //checkSpaceMiddle(newt);
         //console.log(newt.length);
         //console.log(makeArray);
@@ -45,7 +46,14 @@ function convertText(text) {
     //checkspace middle 
     function checkSpaceMiddle(word) {
 
-        return console.log(word.includes('') || word.includes(' '));
+        //return console.log(word.includes('') || word.includes(' '));
+
+        if (word.includes('') || word.includes(' ')) {
+
+            return word.split('').filter(c => c !== '' || ' ').join('');
+
+        }
+
 
 
     }
