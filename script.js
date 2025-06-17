@@ -5,7 +5,10 @@ const textInput = document.querySelector('.textmain');
 const convertBtn = document.querySelector('.convert');
 let textResult = document.querySelector('.textresult');
 
-//function
+//functions
+
+
+//main function
 function convertText(text) {
 
     let newtxt;
@@ -22,7 +25,10 @@ function convertText(text) {
         newtxt = text.trim();// removes space on the start and at the end of the string 
         specialCharchecker ? newt = text.split(specialChars) : console.log('specialcharno');
         makeArray = new Array(newt.length);
+        console.log(newt);
+        checkSpaceMiddle(newt);
         console.log(newt.length);
+        console.log(makeArray);
 
         // let test = newtxt = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/ ? console.log('real') : console.log('nope2');
 
@@ -34,7 +40,11 @@ function convertText(text) {
         console.log(`${x}${y}`);
     }
 
+    //checkspace middle 
+    function checkSpaceMiddle(x) {
+        return console.log(x.includes(' '));
 
+    }
 
 
 }
