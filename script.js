@@ -45,17 +45,16 @@ function convertText(text) {
 
     //checkspace middle 
     function checkSpaceMiddle(word) {
-
+        let result;
         //return console.log(word.includes('') || word.includes(' '));
 
         if (word.includes('') || word.includes(' ')) {
-
-            return word.split('').filter(c => c !== '' || ' ').join('');
+            console.log(word);
+            result = word.filter(c => c !== '' || c !== ' ').join('');
 
         }
 
-
-
+        return console.log(result);
     }
 
 
