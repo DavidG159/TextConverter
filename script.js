@@ -4,6 +4,7 @@
 const textInput = document.querySelector('.textmain');
 const convertBtn = document.querySelector('.convert');
 let textResult = document.querySelector('.textresult');
+const clicksfx = new Audio('click2.mp3');
 
 //functions
 
@@ -63,7 +64,7 @@ function checkSpaceMiddle(word) {
 //=================================================================
 //event listener
 convertBtn.addEventListener('click', function () {
-
+    clicksfx.play();
     const textHolder = textInput.value;
     textResult.textContent = convertText(textHolder);
 
