@@ -27,16 +27,15 @@ function convertText(text) {
         newtxt = text.trim();// removes space on the start and at the end of the string 
         specialCharchecker ? newt = newtxt.split(specialChars).join('') : console.log('specialcharno');
         makeArray = new Array(newt.length);
-        console.log(newt, "This is newt");
+        console.log(newt, "first if statement");
         endResult = checkSpaceMiddle(newt);
-
-        // let test = newtxt = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/ ? console.log('real') : console.log('nope2');
 
         //if strings has no space at the start and end
     } else if (specialCharchecker) {
         newt = text.split(specialChars);
-        console.log(newt, "2nd part is printed");
-
+        //endResult = checkSpaceMiddle(newt);
+        console.log(newt, 'else if ');
+        endResult = newt.filter(c => c !== '' && c !== ' ').join('');
     }
 
     return endResult;
