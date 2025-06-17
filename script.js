@@ -23,26 +23,30 @@ function convertText(text) {
     if (checkspace) {
 
         newtxt = text.trim();// removes space on the start and at the end of the string 
-        specialCharchecker ? newt = text.split(specialChars) : console.log('specialcharno');
+        specialCharchecker ? newt = newtxt.split(specialChars) : console.log('specialcharno');
         makeArray = new Array(newt.length);
-        console.log(newt);
+
+        console.log(newtxt, "This is newtxt");
+        console.log(newt, "This is newt");
         checkSpaceMiddle(newt);
-        console.log(newt.length);
-        console.log(makeArray);
+        //checkSpaceMiddle(newt);
+        //console.log(newt.length);
+        //console.log(makeArray);
 
         // let test = newtxt = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/ ? console.log('real') : console.log('nope2');
 
+        //if strings has no space at the start and end
     } else if (specialCharchecker) {
         newt = text.split(specialChars);
-        console.log(newt);
-        const [x, y] = newt;
+        console.log(newt, "2nd part is printed");
 
-        console.log(`${x}${y}`);
     }
 
     //checkspace middle 
-    function checkSpaceMiddle(x) {
-        return console.log(x.includes(' '));
+    function checkSpaceMiddle(word) {
+
+        return console.log(word.includes('') || word.includes(' '));
+
 
     }
 
