@@ -14,6 +14,7 @@ function convertText(text) {
     let newtxt;
     let newt;
     let makeArray;
+    let endResult;
     const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g; // specialchar
     const specialCharchecker = specialChars.test(text);  // checking if it has specialchars - returns true or false
     const checkspace = /\s/.test(text);                 // checking if it has space - returns true or false
@@ -27,7 +28,8 @@ function convertText(text) {
         makeArray = new Array(newt.length);
         console.log(newt, "This is newt");
 
-        checkSpaceMiddle(newt);
+        endResult = checkSpaceMiddle(newt);
+
 
         //checkSpaceMiddle(newt);
         //console.log(newt.length);
@@ -42,29 +44,34 @@ function convertText(text) {
 
     }
 
-    //checkspace middle 
-    function checkSpaceMiddle(word) {
-        let result;
-        //return console.log(word.includes('') || word.includes(' '));
-        //checks if the array has a '' or ' '
-        if (word.includes('') || word.includes(' ')) {
-            console.log(word.trim().split(''));
-            result = word.trim().split('').filter(c => c !== '' && c !== ' ').join('');
+    return endResult;
 
-        }
-
-        return console.log(result);
-    }
 
 
 }
 
+//checkspace middle 
+function checkSpaceMiddle(word) {
+    let result;
+    //return console.log(word.includes('') || word.includes(' '));
+    //checks if the array has a '' or ' '
+    if (word.includes('') || word.includes(' ')) {
+        console.log(word.trim().split(''));
+        result = word.trim().split('').filter(c => c !== '' && c !== ' ').join('');
+
+    }
+    console.log(result, "THIS IS THE RESULT")
+
+    return result;
+}
+
+
+//=================================================================
 //event listener
 convertBtn.addEventListener('click', function () {
 
     const textHolder = textInput.value;
-    textResult.textContent = textHolder;
-    convertText(textHolder);
+    textResult.textContent = convertText(textHolder);
 
 
 
