@@ -27,13 +27,7 @@ function convertText(text) {
         specialCharchecker ? newt = newtxt.split(specialChars).join('') : console.log('specialcharno');
         makeArray = new Array(newt.length);
         console.log(newt, "This is newt");
-
         endResult = checkSpaceMiddle(newt);
-
-
-        //checkSpaceMiddle(newt);
-        //console.log(newt.length);
-        //console.log(makeArray);
 
         // let test = newtxt = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/ ? console.log('real') : console.log('nope2');
 
@@ -72,8 +66,6 @@ convertBtn.addEventListener('click', function () {
 
     const textHolder = textInput.value;
     textResult.textContent = convertText(textHolder);
-
-
 
 });
 
