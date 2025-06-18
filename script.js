@@ -26,7 +26,6 @@ function convertText(text) {
 
         newtxt = text.trim();// removes space on the start and at the end of the string 
         specialCharchecker ? newt = newtxt.split(specialChars).join('') : console.log('specialcharno');
-        makeArray = new Array(newt.length);
         console.log(newt, "first if statement");
         endResult = checkSpaceMiddle(newt);
 
